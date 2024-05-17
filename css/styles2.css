@@ -1,6 +1,6 @@
 body 
 {
-    background-color: #707070;
+    background-color: #107070;
 }
 
 #title 
@@ -15,7 +15,7 @@ body
 
 #loginDiv
 {
-    font-size: 30px;
+    font-size: 20px;
     width: 70%;
     margin-left: 15%;
     padding: 25px;
@@ -55,10 +55,6 @@ body
     opacity: 50%;
 }
 
-#name
-{
-	font-size: 30px;
-}
 #loginName
 {
 	font-size: 30px;
