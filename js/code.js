@@ -6,23 +6,20 @@ let firstName = "";
 let lastName = "";
 const ids = []
 
-function doLogin() {
+function doLogin()
+{
 	userId = 0;
 	firstName = "";
 	lastName = "";
 	
 	let login = document.getElementById("loginName").value;
 	let password = document.getElementById("loginPassword").value;
-	
-	var hash = md5( password );
+//	var hash = md5( password );
 	
 	document.getElementById("loginResult").innerHTML = "";
 
-	let tmp = {
-		login:login,
-		password:hash
-	};
-
+	let tmp = {login:login,password:password};
+//	var tmp = {login:login,password:hash};
 	let jsonPayload = JSON.stringify( tmp );
 	
 	let url = urlBase + '/Login.' + extension;
@@ -50,7 +47,7 @@ function doLogin() {
 
 				saveCookie();
 	
-				window.location.href = "colors.html";
+				window.location.href = "color.html";
 			}
 		};
 		xhr.send(jsonPayload);
@@ -63,58 +60,57 @@ function doLogin() {
 }
 
 function doRegister() {
-    firstName = document.getElementById("firstName").value;
-    lastName = document.getElementById("lastName").value;
+	firstName = document.getElementById("firstName").value;
+    	lastName = document.getElementById("lastName").value;
 
-    let username = document.getElementById("username").value;
-    let password = document.getElementById("password").value;
+    	let username = document.getElementById("username").value;
+    	let password = document.getElementById("password").value;
 
-    var hash = md5(password);
 
-    document.getElementById("signupResult").innerHTML = "";
+	if (!validRegister(firstName, lastName, username, password)) {
+        	document.getElementById("signupResult").innerHTML = "invalid signup";
+        	return;
+    	}
 
-    let tmp = {
-        firstName: firstName,
-        lastName: lastName,
-        login: username,
-        password: hash
-    };
+	document.getElementById("signupResult").innerHTML = "";
 
-    let jsonPayload = JSON.stringify(tmp);
+	let tmp = {firstName: firstName, lastName: lastName, login: username, password: password};
+	let jsonPayload = JSON.stringify( tmp );
 
-    let url = urlBase + '/Register.' + extension;
+	let url = urlBase + '/Register.' + extension;
+	
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
-    let xhr = new XMLHttpRequest();
-    xhr.open("POST", url, true);
-    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try
+	{
+		xhr.onreadystatechange = function() 
+		{
 
-    try {
-        xhr.onreadystatechange = function () {
+			if (this.readyState != 4) {
+                		return;
+            		}
 
-            if (this.readyState != 4) {
-                return;
-            }
+            		if (this.status == 409) {
+               			document.getElementById("signupResult").innerHTML = "User already exists";
+               			return;
+          		}
 
-            if (this.status == 409) {
-                document.getElementById("signupResult").innerHTML = "User already exists";
-                return;
-            }
+            		if (this.status == 200) {
+                		let jsonObject = JSON.parse(xhr.responseText);
+                		userId = jsonObject.id;
+                		document.getElementById("signupResult").innerHTML = "User added";
+                		firstName = jsonObject.firstName;
+                		lastName = jsonObject.lastName;
+                		saveCookie();
+            		}
+        	};
 
-            if (this.status == 200) {
-
-                let jsonObject = JSON.parse(xhr.responseText);
-                userId = jsonObject.id;
-                document.getElementById("signupResult").innerHTML = "User added";
-                firstName = jsonObject.firstName;
-                lastName = jsonObject.lastName;
-                saveCookie();
-            }
-        };
-
-        xhr.send(jsonPayload);
-    } catch (err) {
-        document.getElementById("signupResult").innerHTML = err.message;
-    }
+        	xhr.send(jsonPayload);
+    	} catch (err) {
+        	document.getElementById("signupResult").innerHTML = err.message;
+    	}
 }
 
 function saveCookie()
@@ -150,7 +146,7 @@ function readCookie()
 	
 	if( userId < 0 )
 	{
-		window.location.href = "index.php";
+		window.location.href = "index.html";
 	}
 	else
 	{
@@ -164,7 +160,7 @@ function doLogout()
 	firstName = "";
 	lastName = "";
 	document.cookie = "firstName= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
-	window.location.href = "index.php";
+	window.location.href = "index.html";
 }
 
 function addColor()
@@ -243,6 +239,46 @@ function searchColor()
 	
 }
 
-function checkRegister(fName, lName, user, pass) {
+function validRegister(fName, lName, user, pass) {
 
+    var fNameErr = lNameErr = userErr = passErr = true;
+
+    if (fName == "") {
+        console.log("FIRST NAME IS BLANK");
+    }
+    else {
+        console.log("first name IS VALID");
+        fNameErr = false;
+    }
+
+    if (lName == "") {
+        console.log("LAST NAME IS BLANK");
+    }
+    else {
+        console.log("LAST name IS VALID");
+        lNameErr = false;
+    }
+
+    if (user == "") {
+        console.log("USERNAME IS BLANK");
+    }
+    else {
+         console.log("USERNAME IS VALID");
+         userErr = false; 
+    }
+
+    if (pass == "") {
+        console.log("PASSWORD IS BLANK");
+    }
+    else {
+        console.log("PASSWORD IS VALID");
+        passErr = false;
+    }
+
+    if ((fNameErr || lNameErr || userErr || passErr) == true) {
+        return false;
+
+    }
+
+    return true;
 }
