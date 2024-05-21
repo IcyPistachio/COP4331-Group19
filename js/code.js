@@ -4,21 +4,25 @@ const extension = 'php';
 let userId = 0;
 let firstName = "";
 let lastName = "";
+const ids = []
 
-function doLogin()
-{
+function doLogin() {
 	userId = 0;
 	firstName = "";
 	lastName = "";
 	
 	let login = document.getElementById("loginName").value;
 	let password = document.getElementById("loginPassword").value;
-//	var hash = md5( password );
+	
+	var hash = md5( password );
 	
 	document.getElementById("loginResult").innerHTML = "";
 
-	let tmp = {login:login,password:password};
-//	var tmp = {login:login,password:hash};
+	let tmp = {
+		login:login,
+		password:hash
+	};
+
 	let jsonPayload = JSON.stringify( tmp );
 	
 	let url = urlBase + '/Login.' + extension;
@@ -46,7 +50,7 @@ function doLogin()
 
 				saveCookie();
 	
-				window.location.href = "color.html";
+				window.location.href = "colors.html";
 			}
 		};
 		xhr.send(jsonPayload);
@@ -78,7 +82,7 @@ function doRegister() {
 
     let jsonPayload = JSON.stringify(tmp);
 
-    let url = urlBase + '/SignUp.' + extension;
+    let url = urlBase + '/Register.' + extension;
 
     let xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
