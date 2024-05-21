@@ -245,44 +245,4 @@ function searchColor()
 
 function checkRegister(fName, lName, user, pass) {
 
-    var fNameErr = lNameErr = userErr = passErr = true;
-
-    if (fName == "") {
-        console.log("FIRST NAME IS BLANK");
-    }
-    else {
-        console.log("first name IS VALID");
-        fNameErr = false;
-    }
-
-    if (lName == "") {
-        console.log("LAST NAME IS BLANK");
-    }
-    else {
-        console.log("LAST name IS VALID");
-        lNameErr = false;
-    }
-
-    if (user == "") {
-        console.log("USERNAME IS BLANK");
-    }
-    else {
-        console.log("USERNAME IS VALID");
-        userErr = false;
-    }
-
-    if (pass == "") {
-        console.log("PASSWORD IS BLANK");
-    }
-    else {
-        console.log("PASSWORD IS VALID");
-        passErr = false;
-    }
-
-    if ((fNameErr || lNameErr || userErr || passErr) == true) {
-        return false;
-
-    }
-
-    return true;
 }
