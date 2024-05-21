@@ -10,20 +10,19 @@
 
 <h1 id="title">SIGNUP</h1>
 
-<form id="signup" class="input-form">
+<div id="loginDiv">
 	<span id="inner-title">PLEASE SIGNUP</span>
-	<input type="text" class="input-field" id="firstName" placeholder="First name" /><br />
-	<input type="text" class="input-field" id="lastName" placeholder="Last name" /><br />
-	<input type="text" class="input-field" id="username" placeholder="Username" /><br />
-	<input type="password" class="input-field" id="password" placeholder="Password"/><br />
+	<input type="text" id="firstName" placeholder="First name" /><br />
+	<input type="text" id="lastName" placeholder="Last name" /><br />
+	<input type="text" id="username" placeholder="Username" /><br />
+	<input type="password" id="password" placeholder="Password"/><br />
 
-
-	<button type="button" id="signupButton" class="buttons" onclick="doRegister();"> Do It </button>
+	<button type="button" id="signupButton" class="buttons" onclick="doRegister();"> Register </button><br />
+	<span id="signupResult"></span>
 
 	<button onclick="location.href = 'index.html';" class ="btn">back</button>
 
-	<span id="signupResult"></span>
-</form>
+</div>
 
 </body>
 </html>
