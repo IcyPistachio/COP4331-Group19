@@ -55,9 +55,21 @@ body
     opacity: 50%;
 }
 
-#name
+#firstName
 {
-	font-size: 20px;
+	font-size: 30px;
+}
+#lastName
+{
+	font-size: 30px;
+}
+#username
+{
+	font-size: 30px;
+}
+#password
+{
+	font-size: 30px;
 }
 #loginName
 {
