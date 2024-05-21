@@ -65,11 +65,6 @@ function doRegister() {
     let username = document.getElementById("username").value;
     let password = document.getElementById("password").value;
 
-    if (!validSignUpForm(firstName, lastName, username, password)) {
-        document.getElementById("signupResult").innerHTML = "invalid signup";
-        return;
-    }
-
     var hash = md5(password);
 
     document.getElementById("signupResult").innerHTML = "";
