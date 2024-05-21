@@ -3,12 +3,13 @@
 	$inData = getRequestInfo();
 
 	$firstName = $inData["firstName"];
-    $lastName = $inData["lastName"];
-    $username = $inData["username"];
-    $password = $inData["password"];
+    	$lastName = $inData["lastName"];
+    	$login = $inData["login"];
+    	$password = $inData["password"];
+
 
 	$conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331");
-	if ($conn->connect_error)
+	if ($conn->connect_error) 
 	{
 		returnWithError( $conn->connect_error );
 	}
@@ -22,8 +23,8 @@
 		$rows = mysqli_num_rows($result);
 		if ($rows == 0)
 		{
-			$stmt = $conn->prepare("INSERT into Users (FirstName, LastName, Username, Password) VALUES(?,?,?,?)");
-			$stmt->bind_param("ssss", $firstName, $lastName, $username, $password);
+			$stmt = $conn->prepare("INSERT into Users (FirstName, LastName, Login, Password) VALUES(?,?,?,?)");
+			$stmt->bind_param("ssss", $firstName, $lastName, $login, $password);
 			$stmt->execute();
 			$id = $conn->insert_id;
 			$stmt->close();
@@ -48,15 +49,10 @@
 		header('Content-type: application/json');
 		echo $obj;
 	}
-
+	
 	function returnWithError( $err )
 	{
 		$retValue = '{"error":"' . $err . '"}';
-		sendResultInfoAsJson( $retValue );
-	}
-	function returnWithInfo( $searchResults )
-	{
-		$retValue = '{"results":[' . $searchResults . '],"error":""}';
 		sendResultInfoAsJson( $retValue );
 	}
 
