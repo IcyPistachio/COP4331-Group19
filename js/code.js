@@ -47,7 +47,7 @@ function doLogin()
 
 				saveCookie();
 	
-				window.location.href = "color.html";
+				window.location.href = "contacts.html";
 			}
 		};
 		xhr.send(jsonPayload);
@@ -67,8 +67,8 @@ function doRegister() {
     	let password = document.getElementById("password").value;
 
 
-	if (!validRegister(firstName, lastName, username, password)) {
-        	document.getElementById("signupResult").innerHTML = "invalid signup";
+	if (!checkRegister(firstName, lastName, username, password)) {
+        	document.getElementById("signupResult").innerHTML = "Invalid information";
         	return;
     	}
 
@@ -100,7 +100,7 @@ function doRegister() {
             		if (this.status == 200) {
                 		let jsonObject = JSON.parse(xhr.responseText);
                 		userId = jsonObject.id;
-                		document.getElementById("signupResult").innerHTML = "User added";
+                		document.getElementById("signupResult").innerHTML = "Registration Complete";
                 		firstName = jsonObject.firstName;
                 		lastName = jsonObject.lastName;
                 		saveCookie();
@@ -163,6 +163,43 @@ function doLogout()
 	lastName = "";
 	document.cookie = "firstName= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
 	window.location.href = "index.html";
+}
+
+function addContact()
+{
+	let firstName = document.getElementById("firstName").value;
+    	let lastName = document.getElementById("lastName").value;
+	let phone = document.getElementById("phone").value;
+    	let email = document.getElementById("email").value;
+
+	if (!checkContact(firstName, lastName, phone, email)) {
+        	document.getElementById("contactAddResult").innerHTML = "Invalid information";
+        	return;
+    	}
+
+	let tmp = {firstName: firstName, lastName: lastName, phone: phone, email: email, userId: userId};
+	let jsonPayload = JSON.stringify( tmp );
+
+	let url = urlBase + '/AddContact.' + extension;
+
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try
+	{
+		xhr.onreadystatechange = function() 
+		{
+			if (this.readyState == 4 && this.status == 200) 
+			{
+				document.getElementById("contactAddResult").innerHTML = "Contact has been added";
+			}
+		};
+		xhr.send(jsonPayload);
+	}	
+	catch(err)
+	{
+		document.getElementById("colorAddResult").innerHTML = err.message;
+	}
 }
 
 function addColor()
@@ -241,7 +278,7 @@ function searchColor()
 	
 }
 
-function validRegister(fName, lName, user, pass) {
+function checkRegister(fName, lName, user, pass) {
 
     var fNameErr = lNameErr = userErr = passErr = true;
 
@@ -270,6 +307,50 @@ function validRegister(fName, lName, user, pass) {
     }
 
     if (pass == "") {
+        console.log("PASSWORD IS BLANK");
+    }
+    else {
+        console.log("PASSWORD IS VALID");
+        passErr = false;
+    }
+
+    if ((fNameErr || lNameErr || userErr || passErr) == true) {
+        return false;
+
+    }
+
+    return true;
+}
+
+function checkContact(fName, lName, ph, mail) {
+
+    var fNameErr = lNameErr = phErr = mailErr = true;
+
+    if (fName == "") {
+        console.log("FIRST NAME IS BLANK");
+    }
+    else {
+        console.log("first name IS VALID");
+        fNameErr = false;
+    }
+
+    if (lName == "") {
+        console.log("LAST NAME IS BLANK");
+    }
+    else {
+        console.log("LAST name IS VALID");
+        lNameErr = false;
+    }
+
+    if (ph == "") {
+        console.log("USERNAME IS BLANK");
+    }
+    else {
+         console.log("USERNAME IS VALID");
+         userErr = false; 
+    }
+
+    if (mail == "") {
         console.log("PASSWORD IS BLANK");
     }
     else {
