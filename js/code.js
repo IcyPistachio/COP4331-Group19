@@ -202,15 +202,17 @@ function addContact()
 	}
 }
 
-function addColor()
+function searchContact()
 {
-	let newColor = document.getElementById("colorText").value;
-	document.getElementById("colorAddResult").innerHTML = "";
+	let srch = document.getElementById("searchText").value;
+	document.getElementById("contactSearchResult").innerHTML = "";
+	
+	let contactList = "";
 
-	let tmp = {color:newColor,userId,userId};
-	let jsonPayload = JSON.stringify( tmp );
+	let tmp = {search:srch,userId:userId};
+	let jsonPayload = JSON.stringify( tmp );	
 
-	let url = urlBase + '/AddColor.' + extension;
+	let url = urlBase + '/SearchContacts.' + extension;
 	
 	let xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
@@ -221,15 +223,36 @@ function addColor()
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				document.getElementById("colorAddResult").innerHTML = "Color has been added";
+				document.getElementById("contactSearchResult").innerHTML = "Contact(s) has been retrieved";
+				let jsonObject = JSON.parse( xhr.responseText );
+				
+
+				for( let i=0; i<jsonObject.results.length; i++ )
+				{
+					// This is responsible for how the List of contacts look *****IMPORTANT****
+					contactList += jsonObject.results[i].FirstName + " | " + jsonObject.results[i].LastName + " | " + jsonObject.results[i].Phone + " | " + jsonObject.results[i].Email;
+					
+					
+
+					if( i < jsonObject.results.length - 1 )
+					{
+						contactList += "<br />\r\n";
+					}
+				}
+
+
+				document.getElementsByTagName("p")[0].innerHTML = contactList;
 			}
 		};
 		xhr.send(jsonPayload);
 	}
 	catch(err)
 	{
-		document.getElementById("colorAddResult").innerHTML = err.message;
+		document.getElementById("contactSearchResult").innerHTML = err.message;
 	}
+}
+
+function deleteRow(id) {
 	
 }
 
