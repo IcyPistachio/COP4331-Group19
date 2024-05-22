@@ -71,6 +71,14 @@ body
 {
 	font-size: 30px;
 }
+#phone
+{
+	font-size: 30px;
+}
+#email
+{
+	font-size: 30px;
+}
 #loginName
 {
 	font-size: 30px;
@@ -137,6 +145,22 @@ select{
     margin-top: 2%;
     font-size: 0.75em;
     font-family: 'Ubuntu', sans-serif;
+}
+
+#contactSearchResult{
+    display: none;
+}
+
+#contactAddResult{
+    display: inline-block;
+    font-size: 0.8em;
+    width: 90%;
+    text-align: center;
+    margin-left: 5%;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    font-family: 'Ubuntu', sans-serif;
+    color: #95060a;
 }
 
 #colorSearchResult{
