@@ -92,6 +92,7 @@ function doRegister() {
             		}
 
             		if (this.status == 409) {
+				//alert("User already exists");
                			document.getElementById("signupResult").innerHTML = "User already exists";
                			return;
           		}
@@ -99,11 +100,13 @@ function doRegister() {
             		if (this.status == 200) {
                 		let jsonObject = JSON.parse(xhr.responseText);
                 		userId = jsonObject.id;
+				//alert("Registration Complete");
                 		document.getElementById("signupResult").innerHTML = "Registration Complete";
                 		firstName = jsonObject.firstName;
                 		lastName = jsonObject.lastName;
                 		saveCookie();
             		}
+			document.getElementById("signupResult").innerHTML = "Registration Complete";
         	};
 
         	xhr.send(jsonPayload);
@@ -111,7 +114,7 @@ function doRegister() {
         	document.getElementById("signupResult").innerHTML = err.message;
     	}
 
-	document.getElementById("signupResult").innerHTML = "Registration Complete";
+	
 }
 
 function saveCookie()
