@@ -1,19 +1,26 @@
 <html>
 <head>
-	<title>Welcome!</title>
+	<title>LOGIN</title>
+	<script type="text/javascript" src="js/md5.js"></script>
+	<script type="text/javascript" src="js/code.js"></script>
     <link href="css/styles.css" rel="stylesheet">	
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 </head>
 <body>
 
-<h1 id="title">Welcome!</h1>
+<h1 id="title">LOGIN</h1>
 
 <div id="loginDiv">
-      <button type="button" id="loginButton" class="buttons" onclick="location.href = 'login.html';" >login</button>
-      <button type="button" id="loginButton" class="buttons" onclick="location.href = 'signup.html';" >signup</button>
+	<span id="inner-title">PLEASE LOG IN</span>
+	<input type="text" id="loginName" placeholder="Username" /><br />
+	<input type="password" id="loginPassword" placeholder="Password"/><br />
+	<button type="button" id="loginButton" class="buttons" onclick="doLogin();"> Login </button>
 
-      <a href="https://my.ucf.edu/" id="welcome" title="Link test">Testing</div> 
+	<span id="loginResult"></span>
 </div>
 
+	<p1>Don't have an account?<p1>
+	<a href="http://104.236.195.48/signup.html">Sign up</a>
+	
 </body>
 </html>
