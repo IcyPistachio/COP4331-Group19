@@ -374,34 +374,34 @@ function checkRegister(fName, lName, user, pass) {
     var fNameErr = lNameErr = userErr = passErr = true;
 
     if (fName == "") {
-        console.log("FIRST NAME IS BLANK");
+        console.log("First name is blank");
     }
     else {
-        console.log("first name IS VALID");
+        console.log("First name is valid");
         fNameErr = false;
     }
 
     if (lName == "") {
-        console.log("LAST NAME IS BLANK");
+        console.log("Last name is blank");
     }
     else {
-        console.log("LAST name IS VALID");
+        console.log("LastT name is valid");
         lNameErr = false;
     }
 
     if (user == "") {
-        console.log("USERNAME IS BLANK");
+        console.log("Username is blank");
     }
     else {
-         console.log("USERNAME IS VALID");
+         console.log("Username is valid");
          userErr = false; 
     }
 
     if (pass == "") {
-        console.log("PASSWORD IS BLANK");
+        console.log("Password is blank");
     }
     else {
-        console.log("PASSWORD IS VALID");
+        console.log("Password is valid");
         passErr = false;
     }
 
@@ -421,7 +421,7 @@ function checkContact(fName, lName, ph, mail) {
         alert("First Name box empty");
     }
     else {
-        console.log("first name IS VALID");
+        console.log("First name is Valid");
         fNameErr = false;
     }
 
@@ -429,7 +429,7 @@ function checkContact(fName, lName, ph, mail) {
         alert("Last Name box empty");
     }
     else {
-        console.log("LAST name IS VALID");
+        console.log("Last name is Valid");
         lNameErr = false;
     }
 
@@ -445,7 +445,7 @@ function checkContact(fName, lName, ph, mail) {
             alert("Phone number is invalid");
         }
         else {
-            console.log("PHONE IS VALID");
+            console.log("Phone number is valid");
             phErr = false;
         }
     }
@@ -462,7 +462,7 @@ function checkContact(fName, lName, ph, mail) {
             alert("Email Invalid");
         }
         else {
-            console.log("EMAIL IS VALID");
+            console.log("Email is valid");
             mailErr = false;
         }
     }
