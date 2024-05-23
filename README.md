@@ -4,11 +4,12 @@
 # - Add regex for email and phonenumber check
 # - DeleteContact.php 
 # - UpdateContact.php
-# - deleteContact function in code.js (NOTE: I need to create buttons next to contacts, feed in their IDs and prob create another html page)
-# - updateContact function in code.js (NOTE: I need to create buttons next to contacts, feed in their IDs and prob create another html page)
+# - deleteContact function in code.js 
+# - updateContact function in code.js 
 # - Test final product
 
 # COMPLETED LIST
+# - I added buttons for delete and edit contacts (The buttons do not actually do anything right now)
 # - Add new contact database 
 # - Create working signup function and php
 # - Create working add contact function and php
