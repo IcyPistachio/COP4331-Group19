@@ -1,26 +1,37 @@
-<html>
-<head>
-	<title>LOGIN</title>
-	<script type="text/javascript" src="js/md5.js"></script>
-	<script type="text/javascript" src="js/code.js"></script>
-    <link href="css/styles.css" rel="stylesheet">	
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-</head>
-<body>
+<!DOCTYPE html>
+<html lang="en">
+   <meta charset="UTF-8">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap" rel="stylesheet">
+   <style></style>
+   <script src=""></script>
 
-<h1 id="title">LOGIN</h1>
+   <body>
+      <div class="logo-container">
+        <img src="images/ContactHubbbb.png" alt="ContactHub"> </img>
+      </div>
 
-<div id="loginDiv">
-	<span id="inner-title">PLEASE LOG IN</span>
-	<input type="text" id="loginName" placeholder="Username" /><br />
-	<input type="password" id="loginPassword" placeholder="Password"/><br />
-	<button type="button" id="loginButton" class="buttons" onclick="doLogin();"> Login </button>
+      <div class="divider"> </div>
 
-	<span id="loginResult"></span>
-</div>
+      <div class="container"> 
+         <div class="box"> 
+            <label class=allerta-stencil-regular>Login</label>
+            <input type="text" id="loginName" name="username" placeholder="Enter your Username" required> </input>
+            <input type="password" id="loginPassword" name="username" placeholder="Enter your Password" required> </input>
+         </div>
+         <button type="button" id="loginButton" class="button" onclick="doLogin();"> Login </button>
+         <p1>Don't have an account?<p1>
+         <a href="http://104.236.195.48/signup.html">Sign up</a>
+      </div>
+      
+      
+      
+      
+   </body>
 
-	<p1>Don't have an account?<p1>
-	<a href="http://104.236.195.48/signup.html">Sign up</a>
-	
-</body>
+
 </html>
