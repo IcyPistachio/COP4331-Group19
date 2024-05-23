@@ -233,7 +233,7 @@ function searchContact()
 					contactList += jsonObject.results[i].FirstName + " | " + jsonObject.results[i].LastName + " | " + jsonObject.results[i].Phone + " | " + jsonObject.results[i].Email;
 					
 					contactList += " " + "<button type='button' onclick='deleteContact();'> Delete</button>";
-					contactList += " " + "<button type='button' onclick='editContact();'> Edit</button>";
+					contactList += " " + "<button type='button' onclick='updateContact();'> Edit</button>";
 
 					if( i < jsonObject.results.length - 1 )
 					{
@@ -257,7 +257,7 @@ function deleteContact() {
 	
 }
 
-function editContact() {
+function updateContact() {
 	
 }
 
