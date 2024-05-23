@@ -4,7 +4,6 @@ const extension = 'php';
 let userId = 0;
 let firstName = "";
 let lastName = "";
-const ids = []
 
 function doLogin()
 {
@@ -174,7 +173,7 @@ function addContact()
 
 	if (!checkContact(firstName, lastName, phone, email)) 
 	{
-        	document.getElementById("contactAddResult").innerHTML = "Invalid information";
+        	//document.getElementById("contactAddResult").innerHTML = "Invalid information";
         	return;
     	}
 
@@ -419,7 +418,7 @@ function checkContact(fName, lName, ph, mail) {
     var fNameErr = lNameErr = phErr = mailErr = true;
 
     if (fName == "") {
-        console.log("FIRST NAME IS BLANK");
+        alert("First Name box empty");
     }
     else {
         console.log("first name IS VALID");
@@ -427,33 +426,53 @@ function checkContact(fName, lName, ph, mail) {
     }
 
     if (lName == "") {
-        console.log("LAST NAME IS BLANK");
+        alert("Last Name box empty");
     }
     else {
         console.log("LAST name IS VALID");
         lNameErr = false;
     }
 
+
+
     if (ph == "") {
-        console.log("USERNAME IS BLANK");
+        alert("Phone Number box empty");
     }
     else {
-         console.log("USERNAME IS VALID");
-         userErr = false; 
+        var regex = /^[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4}$/;
+
+        if (regex.test(ph) == false) {
+            alert("Phone number is invalid");
+        }
+        else {
+            console.log("PHONE IS VALID");
+            phErr = false;
+        }
     }
+
+
 
     if (mail == "") {
-        console.log("PASSWORD IS BLANK");
+        alert("Email address box is empty");
     }
     else {
-        console.log("PASSWORD IS VALID");
-        passErr = false;
+        var regex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+
+        if (regex.test(mail) == false) {
+            alert("Email Invalid");
+        }
+        else {
+            console.log("EMAIL IS VALID");
+            mailErr = false;
+        }
     }
 
-    if ((fNameErr || lNameErr || userErr || passErr) == true) {
+
+    if ((fNameErr || lNameErr || phErr || mailErr) == true) {
         return false;
 
     }
 
     return true;
+
 }
