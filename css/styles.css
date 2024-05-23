@@ -1,180 +1,135 @@
-body 
+body
 {
-    background-color: #707070;
+    height:100%;
+    min-height: 100%;
+    /*background-repeat: no-repeat;*/
+    background-attachment: fixed;
+    margin:0;
+    padding:0;
+    background-image: linear-gradient(0deg, rgba(46,64,64,1) 0%, rgba(0,0,0,1) 50%);
 }
 
-#title 
+.allerta-stencil-regular
 {
-    font-size: 40px;
-    width: 100%;
-    margin: 2% 5%;
+    font-family: "Allerta Stencil", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+  
+
+header
+{
     text-align: center;
-    font-family: 'Ubuntu', sans-serif;
-    color: #FFFFFF;
+    color:blanchedalmond;
 }
 
-#loginDiv
+.logo-container
 {
-    font-size: 30px;
-    width: 70%;
-    margin-left: 15%;
-    padding: 25px;
-    background-color: #b2b2b2;
-}
-
-#loggedInDiv
-{
-    font-size: 30px;
-    width: 70%;
-    margin-left: 15%;
-    padding: 25px;
-    background-color: #b2b2b2;
-}
-
-#accessUIDiv
-{
-    font-size: 30px;
-    width: 70%;
-    margin-left: 15%;
-    padding: 25px;
-    background-color: #b2b2b2;
-}
-
-.buttons
-{
-    font-size: 30px;
-    border-radius: 25px;
-    width: 50%;
-    margin-left: 25%;
-    font-family: 'Ubuntu', sans-serif;
-}
-
-.buttons:hover{
-    background-color: #00d5124f;
-    color: #FFFFFF;
-    opacity: 50%;
-}
-
-#firstName
-{
-	font-size: 30px;
-}
-#lastName
-{
-	font-size: 30px;
-}
-#username
-{
-	font-size: 30px;
-}
-#password
-{
-	font-size: 30px;
-}
-#phone
-{
-	font-size: 30px;
-}
-#email
-{
-	font-size: 30px;
-}
-#loginName
-{
-	font-size: 30px;
-}
-#loginPassword
-{
-	font-size: 30px;
-}
-#searchText
-{
-	font-size: 30px;
-}
-#colorText
-{
-	font-size: 30px;
-}
-
-input[type="text"],input[type="password"]{
-    border-radius: 25px;
     text-align: center;
-    width: 80%;
-    margin-left: 10%;
-    margin-bottom: 2%;
-    font-family: 'Ubuntu', sans-serif;
+    color:azure;
 }
 
-#inner-title{
+
+.container
+{
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+}
+
+.container a
+{
+    color: #36C2CD;
+}
+
+.container p1
+{
+    color: white;
+}
+
+
+.divider
+{
+    height:85px;
+    width:5px;
     display: inline-block;
-    font-size: 0.8em;
-    width: 90%;
+}
+
+.box
+{
+    background-color: white;
+    font-size: 34px;
+    justify-content: center;
     text-align: center;
-    margin-left: 5%;
-    margin-bottom: 2%;
-    font-family: 'Ubuntu', sans-serif;
-    color: #95060a;
+    align-items: center;
+    color: black;
+    padding: 1.5rem;
+    width: 656px;
+    height: 345px;
+    margin-bottom: 28px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #36C2CD;
 }
 
-#loginResult{
-    display: inline-block;
-    font-size: 0.8em;
-    width: 90%;
-    text-align: center;
-    margin-left: 5%;
-    margin-bottom: 2%;
-    font-family: 'Ubuntu', sans-serif;
-    color: #95060a;
+.box label 
+{
+    display:block;
+    margin-top:0.4rem;
+    margin-bottom: 0.6rem;
+    color: #36C2CD;
 }
 
-#userName{
-    display: inline-block;
-    width: 80%;
-    margin-left: 10%;
-    text-align: center;
+.box input
+{
+    background-color : black;
+    color: white;
+    width: 575px;
+    height: 72px;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #36C2CD;
 }
 
-#logoutButton{
-    width: 20%;
-    margin-left: 40%;
+
+input 
+{
+    padding-left: 2rem;
+    font-size: 16px;
 }
 
-select{
-    width: 30%;
-    margin-left: 35%;
+::placeholder
+{
+    color: #939598;
+    font-size: 16px;
+}
+
+button 
+{
+    width: 12%;
+    height: 50px;
+    font-size: 20px;
+    background-color: #36C2CD;
+    font-family: "Allerta Stencil";
+    color: white;
+    margin-bottom: 20px;
+}
+
+button:hover
+{
+    background-color: #0B828B;
+    border-style: solid;
+    border-width: 2px;
+    border-color: white;
+    color: white;
+}
+
+img
+{
     margin-top: 2%;
-    font-size: 0.75em;
-    font-family: 'Ubuntu', sans-serif;
+    margin-bottom: -4.5%
 }
 
-#contactSearchResult{
-    display: none;
-}
-
-#contactAddResult{
-    display: inline-block;
-    font-size: 0.8em;
-    width: 90%;
-    text-align: center;
-    margin-left: 5%;
-    margin-top: 2%;
-    margin-bottom: 1%;
-    font-family: 'Ubuntu', sans-serif;
-    color: #95060a;
-}
-
-#colorSearchResult{
-    display: none;
-}
-
-#colorAddResult{
-    display: inline-block;
-    font-size: 0.8em;
-    width: 90%;
-    text-align: center;
-    margin-left: 5%;
-    margin-top: 2%;
-    margin-bottom: 1%;
-    font-family: 'Ubuntu', sans-serif;
-    color: #95060a;
-}
