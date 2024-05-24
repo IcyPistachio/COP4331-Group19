@@ -10,6 +10,28 @@
     <link href="css/styles.css" rel="stylesheet">
     <script type="text/javascript" src="js/md5.js"></script>
     <script type="text/javascript" src="js/code.js"></script>
+	<style> 
+		.btn
+		{
+			margin-left:0px;
+		}
+		.ctn-buttons
+		{
+			width:100%;
+			align-items: center;
+			display: flex;
+			justify-content: center;
+		}
+		.br-image
+      	{
+			position: absolute;
+    			bottom: 0;
+    			right: 0;
+    			width: 300px;
+    			height: auto; 
+        		margin-bottom: -130px;
+      	}
+	</style>
 </head>
 <body>
     <div class="logo-container">
@@ -17,19 +39,22 @@
     </div>
 	<div class = "divider"> </div>
 	<div class = "container">
-		<div class = "box" style="height: 625px; width: 850px;">
-			<label class = "allerta-stencil-regular" style="font-size: 60px;">Sign up</label>
+		<div class = "box" style="height: 625px; width: 656px;">
+			<label class = "allerta-stencil-regular" style="font-size: 34px;">Sign up</label>
 			<div id="loginDiv">
 				<input type="text" id="firstName" placeholder="First name" /><br />
 				<input type="text" id="lastName" placeholder="Last name" /><br />
 				<input type="text" id="username" placeholder="Username" /><br />
 				<input type="password" id="password" placeholder="Password" /><br />
 			</div>
-			<span id="signupResult" style="color: red; font-size: 20px;"></span>
+			<span id="signupResult" style="color: #95060a; font-size: 0.55em;"></span>
 		</div>
-		<button type="button" id="signupButton" class="buttons" onclick="doRegister();">Register</button><br />
-		
-		<button onclick="location.href='index.html';" class="btn" style = "margin-top: -25px;">Back</button>
+		<div class="ctn-buttons"> 
+			<button onclick="location.href='index.html';" class="btn" style = "margin-top: 0px;">Back</button>
+			<button type="button" id="signupButton" class="buttons" onclick="doRegister();">Register</button><br />
+		</div>	
 	</div>
+	<img src="images/designflip.png" alt="design" class="top-left-image"></img>
+      <img src="images/design.png" alt="design" class="br-image"></img>
 </body>
 </html>
