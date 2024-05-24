@@ -132,6 +132,8 @@ img
     margin-top: 2%;
     margin-bottom: -4.5%
 }
+
+
 #loginResult{
     display: inline-block;
     font-size: 0.55em;
@@ -140,5 +142,39 @@ img
     margin-bottom: 2%;
     font-family: sans-serif;
     color: #95060a;
+}
+
+
+.top-left-image 
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: auto;  
+    width: 300px;
+}
+
+
+footer
+{
+    align-items: right;
+    justify-content: right;
+}
+
+
+.bottom-right-image
+{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    height: auto; 
+}
+
+
+.logo-image
+{
+    margin-top: 2%;
+    margin-bottom: -4.5%
 }
 
