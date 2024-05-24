@@ -215,6 +215,10 @@ function searchContact()
 	
 	let contactList = "";
 	let temp = "";
+	let f = "";
+	let l = "";
+	let p = "";
+	let e = "";
 	let Id = 0;
 
 	let tmp = {search:srch,userId:userId};
@@ -237,8 +241,14 @@ function searchContact()
 
 				for( let i=0; i<jsonObject.results.length; i++ )
 				{
+					f = jsonObject.results[i].FirstName;
+					l = jsonObject.results[i].LastName;
+					p = jsonObject.results[i].Phone;
+					e = jsonObject.results[i].Email;
 					temp = jsonObject.results[i].ID;
 					Id = parseInt(temp);
+
+					const tmp = [f, l, p, e, temp];
 					
 					// This is responsible for how the List of contacts look *****IMPORTANT****
 					contactList += jsonObject.results[i].FirstName;
@@ -252,7 +262,9 @@ function searchContact()
 					
 
 					contactList += " " + "<button type='button' onclick=deleteContact(" + Id + ");> Delete</button>";
-					contactList += " " + "<button type='button' onclick=updateContact();> Edit</button>";
+
+				
+					contactList += " " + "<button type='button' onclick=updateContact(" + Id + ");> Edit</button>";
 
 					if( i < jsonObject.results.length - 1 )
 					{
@@ -278,6 +290,10 @@ function loadContacts() {
 	
 	let contactList = "";
 	let temp = "";
+	let f = "";
+	let l = "";
+	let p = "";
+	let e = "";
 	let Id = 0;
 
 	let tmp = {search:srch,userId:userId};
@@ -300,6 +316,10 @@ function loadContacts() {
 
 				for( let i=0; i<jsonObject.results.length; i++ )
 				{
+					f = jsonObject.results[i].FirstName;
+					l = jsonObject.results[i].LastName;
+					p = jsonObject.results[i].Phone;
+					e = jsonObject.results[i].Email;
 					temp = jsonObject.results[i].ID;
 					Id = parseInt(temp);
 					
@@ -315,7 +335,11 @@ function loadContacts() {
 					
 
 					contactList += " " + "<button type='button' onclick=deleteContact(" + Id + ");> Delete</button>";
-					contactList += " " + "<button type='button' onclick=updateContact();> Edit</button>";
+
+
+
+
+					contactList += " " + "<button type='button' onclick=updateContact(" + Id + ");> Edit</button>";
 
 					if( i < jsonObject.results.length - 1 )
 					{
@@ -368,9 +392,147 @@ function deleteContact(num) {
  	}   
 }
 
-function updateContact() {
+function updateContact(num) {
+	let ID = num;
+	let f = prompt("Enter change for first name. (Leave blank to keep the same)", "");
+	let l = prompt("Enter change for last name. (Leave blank to keep the same)", "");
+	let p = prompt("Enter change for phone number. (Leave blank to keep the same)", "");
+	let e = prompt("Enter change for email address. (Leave blank to keep the same)", "");
+
 	
+	var regex = /^[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4}$/;
+
+        if (p != "" && regex.test(p) == false) {
+            	alert("Phone number is invalid");
+		return;
+        }
+        
+	var regex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+
+	if (e != "" && regex.test(e) == false) {
+            	alert("Email address is invalid");
+		return;
+        }
+
+
+	if (f != "")
+	{
+		let tmp = {ID: ID, newFirst: f};
+
+		let jsonPayload = JSON.stringify(tmp);
+
+		let url = urlBase + '/UpdateFirstName.' + extension;
+
+		let xhr = new XMLHttpRequest();
+        	xhr.open("POST", url, true);
+        	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+        	try 
+		{
+        		xhr.onreadystatechange = function () 
+			{
+                		if (this.readyState == 4 && this.status == 200) 
+				{
+                    			//document.getElementById("contactDeleteResult").innerHTML = "Contact has been updated";
+                		}
+        		};
+            	xhr.send(jsonPayload);
+        	} 
+		catch (err) 
+		{
+            		document.getElementById("contactDeleteResult").innerHTML = err.message;
+        	}
+	}
+
+	if (l != "")
+	{
+		let tmp = {ID: ID, newLast: l};
+
+		let jsonPayload = JSON.stringify(tmp);
+
+		let url = urlBase + '/UpdateLastName.' + extension;
+
+		let xhr = new XMLHttpRequest();
+        	xhr.open("POST", url, true);
+        	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+        	try 
+		{
+        		xhr.onreadystatechange = function () 
+			{
+                		if (this.readyState == 4 && this.status == 200) 
+				{
+                    			//document.getElementById("contactDeleteResult").innerHTML = "Contact has been updated";
+                		}
+        		};
+            	xhr.send(jsonPayload);
+        	} 
+		catch (err) 
+		{
+            		document.getElementById("contactDeleteResult").innerHTML = err.message;
+        	}
+	}
+
+	if (p != "")
+	{
+		let tmp = {ID: ID, newPhone: p};
+
+		let jsonPayload = JSON.stringify(tmp);
+
+		let url = urlBase + '/UpdatePhone.' + extension;
+
+		let xhr = new XMLHttpRequest();
+        	xhr.open("POST", url, true);
+        	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+        	try 
+		{
+        		xhr.onreadystatechange = function () 
+			{
+                		if (this.readyState == 4 && this.status == 200) 
+				{
+                    			//document.getElementById("contactDeleteResult").innerHTML = "Contact has been updated";
+                		}
+        		};
+            	xhr.send(jsonPayload);
+        	} 
+		catch (err) 
+		{
+            		document.getElementById("contactDeleteResult").innerHTML = err.message;
+        	}
+	}
+
+	if (e != "")
+	{
+		let tmp = {ID: ID, newEmail: e};
+
+		let jsonPayload = JSON.stringify(tmp);
+
+		let url = urlBase + '/UpdateEmail.' + extension;
+
+		let xhr = new XMLHttpRequest();
+        	xhr.open("POST", url, true);
+        	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+        	try 
+		{
+        		xhr.onreadystatechange = function () 
+			{
+                		if (this.readyState == 4 && this.status == 200) 
+				{
+                    			//document.getElementById("contactDeleteResult").innerHTML = "Contact has been updated";
+                		}
+        		};
+            	xhr.send(jsonPayload);
+        	} 
+		catch (err) 
+		{
+            		document.getElementById("contactDeleteResult").innerHTML = err.message;
+        	}
+	}
+
+
+	alert("Contact has been updated!");
+	loadContacts();
 }
+
+
 
 function checkRegister(fName, lName, user, pass) {
 
