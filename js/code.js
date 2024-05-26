@@ -194,7 +194,7 @@ function addContact()
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				alert("User Added");
+				alert("Contact Added");
 				//document.getElementById("contactAddResult").innerHTML = "Contact has been added";
 			}
 		};
@@ -257,14 +257,12 @@ function searchContact()
 					contactList += " | ";
 					contactList += jsonObject.results[i].Phone;
 					contactList += " | ";
-					contactList += jsonObject.results[i].Email;
-					
-					
-
+					contactList += jsonObject.results[i].Email;									
+	
 					contactList += " " + "<button type='button' onclick=deleteContact(" + Id + ");> Delete</button>";
 
-				
 					contactList += " " + "<button type='button' onclick=updateContact(" + Id + ");> Edit</button>";
+					
 
 					if( i < jsonObject.results.length - 1 )
 					{
@@ -330,14 +328,10 @@ function loadContacts() {
 					contactList += " | ";
 					contactList += jsonObject.results[i].Phone;
 					contactList += " | ";
-					contactList += jsonObject.results[i].Email;
-					
+					contactList += jsonObject.results[i].Email;					
 					
 
 					contactList += " " + "<button type='button' onclick=deleteContact(" + Id + ");> Delete</button>";
-
-
-
 
 					contactList += " " + "<button type='button' onclick=updateContact(" + Id + ");> Edit</button>";
 
@@ -394,10 +388,14 @@ function deleteContact(num) {
 
 function updateContact(num) {
 	let ID = num;
-	let f = prompt("Enter change for first name. (Leave blank to keep the same)", "");
-	let l = prompt("Enter change for last name. (Leave blank to keep the same)", "");
-	let p = prompt("Enter change for phone number. (Leave blank to keep the same)", "");
-	let e = prompt("Enter change for email address. (Leave blank to keep the same)", "");
+	let f = "";
+	let l = "";
+	let p = "";
+	let e = "";
+	f = prompt("Enter change for first name. (Leave blank and press OK to keep the same)", "");
+	l = prompt("Enter change for last name. (Leave blank and press OK to keep the same)", "");
+	p = prompt("Enter change for phone number. (Leave blank and press OK to keep the same)", "");
+	e = prompt("Enter change for email address. (Leave blank and press OK to keep the same)", "");
 
 	
 	var regex = /^[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4}$/;
