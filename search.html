@@ -20,6 +20,8 @@
 <div id="loggedInDiv">
 	<span id="userName"></span><br />
 	<button type="button" id="logoutButton" class="buttons" onclick="doLogout();"> Log Out </button>
+	<button onclick="location.href = 'contacts.html';" class ="btn">back</button>
+	
 </div>
 
 <div id="accessUIDiv">
@@ -27,11 +29,12 @@
 
 	<input type="text" id="searchText" placeholder="Search for Contact"/>
 	<button type="button" id="searchContactButton" class="buttons" onclick="searchContact();"> Search Contact </button><br />
-	<span id="contactSearchResult"></span>
-	<p id="contactList">
+	
+	<span id="contactSearchResult" style="color: red; font-size: 20px;"></span>
+
+	<p id="contactList" style="color: white; font-size: 20px;">
 	</p><br /><br />
 
-	<button onclick="location.href = 'contacts.html';" class ="btn">back</button>
 </div>
 
 </body>
