@@ -1,10 +1,13 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>Contact Hub</title>
+	<title>Search</title>
 	<script type="text/javascript" src="js/code.js"></script>
     <link href="css/styles.css" rel="stylesheet">	
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-	
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap" rel="stylesheet">
+
 	<script type="text/javascript">
 	document.addEventListener('DOMContentLoaded', function() 
 	{
@@ -13,24 +16,30 @@
 	</script>
 	
 </head>
+
+
 <body>
 
-<h1 id="title">Contact Hub</h1>
+    <div class="sidebar">
+        <img src="images/addIcon.png" alt="Add" onclick="location.href = 'add.html';" class="icons">
+        <img src="images/searchIcon.png" alt="Search" onclick="location.href = 'search.html';" class="icons">
+        <img src="images/infoIcon.png" alt="Info" onclick="location.href = 'info.html';" class="icons">
+        <div id="loggedInDiv">
+            <span id="userName"></span><br />
+            <img src="images/logoutIcon.png" alt="Logout" onclick="doLogout();" id="logoutButton" class="icons">
+         </div>
+    </div>
 
-<div id="loggedInDiv">
-	<span id="userName"></span><br />
-	<button type="button" id="logoutButton" class="buttons" onclick="doLogout();"> Log Out </button>
-	<button onclick="location.href = 'contacts.html';" class ="btn">back</button>
-	
-</div>
+    <div class="search-text">Search Contact</div>
 
 <div id="accessUIDiv">
 	<br />
-
-	<input type="text" id="searchText" placeholder="Search for Contact"/>
-	<button type="button" id="searchContactButton" class="buttons" onclick="searchContact();"> Search Contact </button><br />
+    <div class="search-container">
+        <input class="search-box" type="text" id="searchText" placeholder="Search for Contact"/>
+	    <button style="display:inline-block" type="button" id="searchContactButton" class="buttons" onclick="searchContact();"> Search Contact </button><br />
+    </div>
 	
-	<span id="contactSearchResult" style="color: red; font-size: 20px;"></span>
+	<span id="contactSearchResult" style="color: #36C2CD; font-size: 20px;"></span>
 
 	<p id="contactList" style="color: white; font-size: 20px;">
 	</p><br /><br />
