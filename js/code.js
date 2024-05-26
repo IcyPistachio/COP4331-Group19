@@ -195,6 +195,10 @@ function addContact()
 			if (this.readyState == 4 && this.status == 200) 
 			{
 				alert("Contact Added");
+				document.getElementById('firstName').value = '';
+				document.getElementById('lastName').value = '';
+				document.getElementById('phone').value = '';
+				document.getElementById('email').value = '';
 				//document.getElementById("contactAddResult").innerHTML = "Contact has been added";
 			}
 		};
