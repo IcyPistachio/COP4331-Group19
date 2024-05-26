@@ -327,12 +327,12 @@ function loadContacts() {
 					
 					// This is responsible for how the List of contacts look *****IMPORTANT****
 					contactList += jsonObject.results[i].FirstName;
-					contactList += " | ";
+					contactList += "  |  ";
 					contactList += jsonObject.results[i].LastName;
-					contactList += " | ";
+					contactList += "  |  ";
 					contactList += jsonObject.results[i].Phone;
-					contactList += " | ";
-					contactList += jsonObject.results[i].Email;					
+					contactList += "  |  ";
+					contactList += jsonObject.results[i].Email;						
 					
 
 					contactList += " " + "<button type='button' onclick=deleteContact(" + Id + ");> Delete</button>";
