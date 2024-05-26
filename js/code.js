@@ -1,4 +1,4 @@
-const urlBase = 'http://104.236.195.48/LAMPAPI';
+const urlBase = 'http://contacthub.online/LAMPAPI';
 const extension = 'php';
 
 let userId = 0;
