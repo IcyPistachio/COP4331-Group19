@@ -164,7 +164,7 @@ function doLogout()
 	firstName = "";
 	lastName = "";
 	document.cookie = "firstName= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
-	window.location.href = "index.html";
+	window.location.href = "http://contacthub.online/index.html";
 }
 
 function addContact()
@@ -261,7 +261,8 @@ function searchContact()
 					contactList += "  |  ";
 					contactList += jsonObject.results[i].Phone;
 					contactList += "  |  ";
-					contactList += jsonObject.results[i].Email;									
+					contactList += jsonObject.results[i].Email;
+								
 	
 					contactList += " " + "<button type='button' onclick=deleteContact(" + Id + ");> Delete</button>";
 
