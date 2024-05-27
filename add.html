@@ -1,10 +1,13 @@
 <html>
+
 <head>
-	<title>Contact Hub</title>
+	<title>Add</title>
 	<script type="text/javascript" src="js/code.js"></script>
-    <link href="css/styles.css" rel="stylesheet">	
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-	
+    <link href="css/styles2.css" rel="stylesheet">	
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap" rel="stylesheet">
+	</style>
 	<script type="text/javascript">
 	document.addEventListener('DOMContentLoaded', function() 
 	{
@@ -13,29 +16,38 @@
 	</script>
 	
 </head>
+
 <body>
 
-<h1 id="title">Contact Hub</h1>
+	<div class="sidebar">
+        <img src="images/addIcon.png" alt="Add" onclick="location.href = 'add.html';" class="icons">
+        <img src="images/searchIcon.png" alt="Search" onclick="location.href = 'search.html';" class="icons">
+        <img src="images/infoIcon.png" alt="Info" onclick="location.href = 'info.html';" class="icons">
+        <div id="loggedInDiv">
+            <span id="userName"></span><br />
+            <img src="images/logoutIcon.png" alt="Logout" onclick="doLogout();" id="logoutButton" class="icons">
+         </div>
+    </div>
 
-<div id="loggedInDiv">
-	<span id="userName"></span><br />
-	<button type="button" id="logoutButton" class="buttons" onclick="doLogout();"> Log Out </button>
-	<button onclick="location.href = 'contacts.html';" class ="btn">back</button>
-</div>
+	<div class="search-text" >Add Contact</div>
 
 <div id="accessUIDiv">
 	<br />
+	<div class="search-container">
+        <input class="search-box" type="text" id="firstName" placeholder="First Name"/>
+    </div>
+	<div class="search-container">
+        <input class="search-box" type="text" id="lastName" placeholder="Last Name"/>
+    </div>
+	<div class="search-container">
+        <input class="search-box" type="text" id="phone" placeholder="XXX-XXX-XXXX"/>
+    </div>
+	<div class="search-container">
+        <input class="search-box" type="text" id="email" placeholder="name@email.com"/>
+    </div>
+	<button type="button" id="addContactButton" class="buttons" style="margin-top: 40px;" onclick="addContact();"> Add Contact </button><br />
+	<span id="contactAddResult" style="color: #36C2CD; font-size: 20px; text-align: center; "></span>
 
-	<input type="text" id="firstName" placeholder="First Name">
-	<input type="text" id="lastName" placeholder="Last Name">
-	<input type="text" id="phone" placeholder="XXX-XXX-XXXX">
-	<input type="text" id="email" placeholder="name@email.com">
-	
-	<button type="button" id="addContactButton" class="buttons" onclick="addContact();"> Add Contact </button><br />
-	<span id="contactAddResult"></span>
-
-	
 </div>
-
 </body>
 </html>
