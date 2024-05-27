@@ -67,7 +67,7 @@ function doRegister() {
 
 
 	if (!checkRegister(firstName, lastName, username, password)) {
-        	document.getElementById("signupResult").innerHTML = "Invalid information";
+        	document.getElementById("signupResult").innerHTML = "Invalid not all boxes filled in.";
         	return;
     	}
 
