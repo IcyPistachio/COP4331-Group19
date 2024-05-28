@@ -9,6 +9,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap" rel="stylesheet">
 
 	<script type="text/javascript">
+
         
 	document.addEventListener('DOMContentLoaded', function() 
 	{
@@ -23,12 +24,12 @@
 <body>
 
     <div class="sidebar">
-        <img src="images/addIcon.png" alt="Add" onclick="location.href = 'add.html';" class="icons">
-        <img src="images/searchIcon.png" alt="Search" onclick="location.href = 'search.html';" class="icons">
-        <img src="images/infoIcon.png" alt="Info" onclick="location.href = 'info.html';" class="icons">
+        <img src="images/addIcon.png" alt="Add" onclick="location.href = 'add.html';" class="icons" title="Add">
+        <img src="images/searchIcon.png" alt="Search" onclick="location.href = 'search.html';" class="icons" title="Search">
+        <img src="images/infoIcon.png" alt="Info" onclick="location.href = 'info.html';" class="icons" title="Info">
         <div id="loggedInDiv">
             <span id="userName"></span><br />
-            <img src="images/logoutIcon.png" alt="Logout" onclick="doLogout();" id="logoutButton" class="icons">
+            <img src="images/logoutIcon.png" alt="Logout" onclick="doLogout();" id="logoutButton" class="icons" title="Logout">
          </div>
     </div>
 
@@ -43,12 +44,17 @@
 	
 	<span id="contactSearchResult" style="color: #36C2CD; font-size: 20px; text-align: center; margin-left: 738px;"></span>
 
-	<p id="contactList" style="color: white; font-size: 20px; text-align:center; margin-left: 200px;">
+	<p id="contactList" style="color: white; font-size: 20px; text-align:center;">
 	    
     </p>
     <br /><br />
 
 </div>
+
+    <img src="images/designTR.png" alt="design" class="top-right-image"></img>
+    <img src="images/design.png" alt="design" class="bottom-right-image"></img>
+
+
 
 </body>
 </html>
