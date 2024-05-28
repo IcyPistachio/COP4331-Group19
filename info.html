@@ -11,10 +11,12 @@
         <link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap" rel="stylesheet">
 
       <script type="text/javascript">
+    
          document.addEventListener('DOMContentLoaded', function() 
          {
          	readCookie();
          }, false);
+         
       </script>
    </head>
 
@@ -22,12 +24,12 @@
 
    <body>
     <div class="sidebar">
-        <img src="images/addIcon.png" alt="Add" onclick="location.href = 'add.html';" class="icons">
-        <img src="images/searchIcon.png" alt="Search" onclick="location.href = 'search.html';" class="icons">
-        <img src="images/infoIcon.png" alt="Info" onclick="location.href = 'info.html';" class="icons">
+        <img src="images/addIcon.png" alt="Add" onclick="location.href = 'add.html';" class="icons" title="Add">
+        <img src="images/searchIcon.png" alt="Search" onclick="location.href = 'search.html';" class="icons" title="Search">
+        <img src="images/infoIcon.png" alt="Info" onclick="location.href = 'info.html';" class="icons" title="Info">
         <div id="loggedInDiv">
             <span id="userName"></span><br />
-            <img src="images/logoutIcon.png" alt="Logout" onclick="doLogout();" id="logoutButton" class="icons">
+            <img src="images/logoutIcon.png" alt="Logout" onclick="doLogout();" id="logoutButton" class="icons" title="Logout">
          </div>
     </div>
     
@@ -43,12 +45,13 @@
     <p class="text-welcome1">This is the Small project (Contact Manger) for the class COP-4331. This tool allows users to efficiently store, manage, and retrieve contact information. </p>
     <br></br>
     <p class="text-welcome3">Members:</p>
-    <p style="margin-left: 725px" class="text-welcome3">Sean Chaney - Project Manager</p>
-    <p style="margin-left: 750px" class="text-welcome3">Tanishqa Sahay - Frontend</p>
-    <p style="margin-left: 760px" class="text-welcome3">Keenan Xiong - Frontend</p>
-    <p style="margin-left: 720px" class="text-welcome3">Jacob Pacheco - API & Database</p>
-    <p style="margin-left: 774px" class="text-welcome3">Carlos Garcia - API</p>
+    <p class="text-welcome3">Sean Chaney - Project Manager</p>
+    <p class="text-welcome3">Tanishqa Sahay - Frontend</p>
+    <p class="text-welcome3">Keenan Xiong - Frontend</p>
+    <p class="text-welcome3">Jacob Pacheco - API & Database</p>
+    <p class="text-welcome3">Carlos Garcia - API</p>
 
+    <img src="images/designTR.png" alt="design" class="top-right-image"></img>
     <img src="images/design.png" alt="design" class="bottom-right-image"></img>
 
    </body>
