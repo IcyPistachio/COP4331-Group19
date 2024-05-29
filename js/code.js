@@ -240,6 +240,7 @@ function searchContact()
 			if (this.readyState == 4 && this.status == 200) 
 			{
 				document.getElementById("contactSearchResult").innerHTML = "Contact(s) has been retrieved";
+                document.getElementById("contactSampleResult").innerHTML = "Firstname | Lastname | Phone Number | Email Address";
 				let jsonObject = JSON.parse( xhr.responseText );
 				
 
