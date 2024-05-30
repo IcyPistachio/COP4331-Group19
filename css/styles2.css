@@ -104,22 +104,21 @@ header
 input 
 {
     padding-left: 2rem;
-    font-size: 16px;
+    font-size: 1.11vw;
 }
-
 
 ::placeholder
 {
     color: #939598;
-    font-size: 16px;
+    font-size: 1.11vw;
 }
 
 
 button 
 {
-    width: 12%;
-    height: 50px;
-    font-size: 20px;
+    width: 15%;
+    height: 5.8vh;
+    font-size: 1.5vw;
     background-color: #36C2CD;
     font-family: "Allerta Stencil";
     color: white;
@@ -158,11 +157,11 @@ img
 
 .top-left-image 
 {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     height: auto;  
-    width: 300px;
+    width: 20.83vw;
 }
 
 
@@ -175,19 +174,20 @@ footer
 
 .bottom-right-image
 {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     right: 0;
-    width: 300px;
+    width: 20.83vw;
+    margin-bottom: 0%;
     height: auto; 
 }
 
 .top-right-image
 {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
-    width: 300px;
+    width: 20.83vw;
     height: auto;
 }
 
@@ -202,19 +202,19 @@ footer
 {
     background-color: white;
     border-style: solid;
-    border-width: 3px;
+    border-width: 0.2vw;
     border-color: #36C2CD;
     align-items: center;
-    width: 105px;
-    height: 640px;
-    margin-left: 100px;
+    width: 7.3%;
+    height: 10%;
+    margin-left: 7%;
     margin-top: 6%;
 }
 
 .icons
 {
-    width: 105px;
-    margin-top: 50px;
+    width: 100%;
+    margin-top: 6.3vh;
 }
 
 .icons:hover
@@ -298,17 +298,17 @@ footer
 .search-text
 {
     font-family: "Allerta Stencil";
-    margin-top: -650px;
-    text-align: center;
+    margin-top: -78.1vh;
     justify-content: center;
-    font-size: 45px;
+    text-align: center;
+    font-size: 3.13vw;
     color: #36C2CD;
 }
 
 .search-container
 {
     display: flex;
-    margin-top: 40px;
+    margin-top: 2.7vw;
     justify-content: center;
 }
 
@@ -316,12 +316,11 @@ footer
 {
     background-color : white;
     color: black;
-    width: 500px;
-    height: 50px;
+    width: 30.6vw;
+    height: 5.8vh;
     border-style: solid;
-    border-width: 3px;
+    border-width: 0.2vw;
     border-color: #36C2CD;
-
 }
 
 #accessUIDiv {
