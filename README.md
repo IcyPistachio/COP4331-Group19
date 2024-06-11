@@ -1,9 +1,7 @@
 # ContactManager
 
-# TO DO LIST
-# - Test final product
-
 # COMPLETED LIST
+# - Finished
 # - Created a way to edit contacts
 # - Added regex for email and phonenumber check
 # - Delete function, button and php work
